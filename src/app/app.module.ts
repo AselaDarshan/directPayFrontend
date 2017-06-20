@@ -58,7 +58,7 @@ export type StoreType = {
     routing
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
-    APP_PROVIDERS,MerchantService
+    APP_PROVIDERS,MerchantService,
   ],
 
 })
