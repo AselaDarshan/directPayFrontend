@@ -9,6 +9,8 @@ export class LoginService {
     private urlTransactionList = AppSettings.DIRECT_PAY_ENDPOINT+'/admin/login';
     //private urlTransactionList = AppSettings.DIRECT_PAY_ENDPOINT+'/reports/transactions';
     //private merchantListUrl = 'http://192.168.8.100/merchant/list';
+    data;
+
     constructor(private http: Http) { }
 
 
@@ -19,8 +21,7 @@ export class LoginService {
                 .toPromise()
                 .then(response => {
                     //noinspection TypeScriptUnresolvedFunction
-
-                    console.log(response);
+                      this.data = resolve(response.json());
                     resolve(response.json());
                 }, error => {
                     console.log(error);
@@ -33,4 +34,7 @@ export class LoginService {
 
         });
     }
+
+
+
 }

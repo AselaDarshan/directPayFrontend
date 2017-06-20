@@ -1,6 +1,8 @@
+import {AuthGuard} from "../class/AuthGuard";
 export const PAGES_MENU = [
   {
     path: 'pages',
+    canActivate: [ AuthGuard ],
     children: [
 
       // {

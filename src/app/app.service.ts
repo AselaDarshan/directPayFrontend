@@ -38,4 +38,5 @@ export class AppState {
     // simple object clone
     return JSON.parse(JSON.stringify(object));
   }
+
 }

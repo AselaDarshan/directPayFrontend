@@ -3,7 +3,8 @@ import {SlipService} from '../slip.service'
 import {Merchant} from "../../../class/merchant";
 import {IMyDpOptions, IMyDateModel} from 'mydatepicker';
 import { Logger } from "angular2-logger/core";
-
+import {AuthService} from "../../auth.service";
+import {Router} from '@angular/router';
 @Component({
 
   selector:'all',
@@ -53,7 +54,7 @@ export class AllComponent implements OnInit{
 
 
 
-  constructor(private trasaction: SlipService,private _logger: Logger) {
+  constructor(private trasaction: SlipService,private _logger: Logger,public authService:AuthService,private router: Router) {
   }
   ngOnInit() {
 
@@ -151,7 +152,7 @@ export class AllComponent implements OnInit{
   }
   getByDateToDate(){
     console.log("getByDAteToDate");
-    this.trasaction.getTransactionByDateToDate(this.fromdate,this.todate).then((data) => {
+    this.trasaction.getTransactionByDateToDate(this.fromdate,this.todate,this.authService.getToken()).then((data) => {
 
       if(data.data.length==0){
         this.infomassage = "Transaction not avilable";
@@ -165,8 +166,8 @@ export class AllComponent implements OnInit{
       }
       else {
         if(data.errors != null){
-          this.errormassage = data.errors[0].source.title;
-          this.transctionError = true;
+          this.authService.authfail();
+          this.router.navigate(['/pages']);
         }
 
       }
