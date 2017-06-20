@@ -1,0 +1,126 @@
+<div class="widgets">
+  <div class="row">
+    <ba-card title="Slips" baCardClass="with-scroll" class="data-table-container">
+      <div class="row">
+        <div class="col-sm-2">
+          <!--label class="label-control">Agent Id</label-->
+          <select class="form-control input-sm" [(ngModel)]="type" (ngModelChange)="filterDate()">
+            <option [ngValue]="0">Date</option>
+            <option [ngValue]="1">Time Period</option>
+
+          </select>
+        </div>
+        <div class="col-sm-4">
+          <!--div class="row">
+            <label class="col-sm-12 label-control">Period</label>
+          </div>
+          <div class="row">
+            <label class="col-sm-12 label-control">Period</label>
+          </div-->
+          <div class="row">
+            <div *ngIf="day" class="offset-sm-1 col-sm-5">
+              <div class="row">
+                <form #myForm="ngForm" novalidate>
+                  <my-date-picker [options]="myDatePickerOptions"
+                                  (dateChanged)="onDateChangedFrom($event)" [(ngModel)]="selectedDateFrom"  name="mydate" required></my-date-picker>
+                </form>
+              </div>
+            </div>
+
+            <div class="offset-sm-1 col-sm-5">
+              <div *ngIf="daytoday" class="row">
+                <form #myForm="ngForm" novalidate>
+                  <my-date-picker [options]="myDatePickerOptions"
+                                  (dateChanged)="onDateChangedTo($event)" [(ngModel)]="selectedDateTo" name="mydate" required></my-date-picker>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="offset-sm-1 col-sm-5">
+            <div class="row">
+              <button (click)="getTransaction()" class="btn btn-primary"> filter</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="row" *ngIf="transctionError">
+        <br>
+        <div class="alert alert-danger">
+          <strong>Error!</strong> {{errormassage}}
+        </div>
+      </div>
+
+      <div class="row" *ngIf="transctionInfo">
+        <br>
+        <div class="alert alert-info">
+          <strong>massege!</strong> {{infomassage}}
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <!--div class="panel-heading">Transaction History</div-->
+
+        <table class="table table-striped" [mfData]="filterdata " #mf="mfDataTable">
+          <thead>
+          <tr>
+            <!--th style="width: 10%"></th-->
+            <th style="width: 10%">
+              <mfDefaultSorter by="tId">ID</mfDefaultSorter>
+            </th>
+            <th style="width: 20%">
+              <mfDefaultSorter by="payerId">User ID</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter by="payerName">Reference Number</mfDefaultSorter>
+            </th>
+            <th style="width: 20%">
+              <mfDefaultSorter by="payeeId">Amount</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter by="payeeName">Account Number</mfDefaultSorter>
+            </th>
+
+
+
+          </tr>
+          <!--tr>
+            <th colspan="5">
+              Filter by name:
+              <input class="form-control" [(ngModel)]="filterQuery" />
+            </th>
+          </tr-->
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of mf.data">
+            <!--td>
+              <button (click)="remove(item)" class="btn btn-danger">x</button>
+            </td-->
+            <td >{{item.id}}</td>
+            <td >{{item.userId}}</td>
+            <td>{{item.referenceNumber}}</td>
+            <td >{{item.amount |  currency:'LKR':true:'1.2-2'}} </td>
+            <td>{{item.accountNumber}}</td>
+
+
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr>
+            <td colspan="5">
+              <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+            </td>
+          </tr>
+          </tfoot>
+        </table>
+      </div>
+    </ba-card>
+  </div>
+</div>
+<div *ngIf="merchantqrcode" class="col-md-6 col-sm-6 col-xs-6">
+  <qrcode [merchantId]="merchantId"></qrcode>
+</div>

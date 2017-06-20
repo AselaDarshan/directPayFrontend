@@ -18,8 +18,8 @@ export const routes: Routes = [
     path: 'pages',
     component: Pages,
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
+      { path: '', redirectTo: 'slip', pathMatch: 'full' },
+      //{ path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
       //{ path: 'editors', loadChildren: './editors/editors.module#EditorsModule' },
       //{ path: 'components', loadChildren: './components/components.module#ComponentsModule' },
       //{ path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
@@ -27,9 +27,9 @@ export const routes: Routes = [
       //{ path: 'forms', loadChildren: './forms/forms.module#FormsModule' },
       //{ path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
       //{ path: 'maps', loadChildren: './maps/maps.module#MapsModule' },
-      { path: 'merchant', loadChildren: './merchant/merchant.module#MerchantModule' },
-      { path: 'transaction', loadChildren: './transaction/transaction.module#TransactionModule' },
-      { path: 'report', loadChildren: './report/report.module#ReportModule' }
+      //{ path: 'merchant', loadChildren: './merchant/merchant.module#MerchantModule' },
+      { path: 'slip', loadChildren: './slip/slip.module#SlipModule' }
+      //{ path: 'report', loadChildren: './report/report.module#ReportModule' }
     ]
   }
 ];

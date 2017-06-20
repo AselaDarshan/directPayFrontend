@@ -3,54 +3,54 @@ export const PAGES_MENU = [
     path: 'pages',
     children: [
 
+      // {
+      //   path: 'dashboard',
+      //   data: {
+      //     menu: {
+      //       title: 'general.menu.dashboard',
+      //       icon: 'ion-android-home',
+      //       selected: false,
+      //       expanded: false,
+      //       order: 0
+      //     }
+      //   }
+      // },
+      // {
+      //   path: 'merchant',  // path for our page
+      //   data: { // custom menu declaration
+      //     menu: {
+      //       title: 'Merchant', // menu title
+      //       icon: 'ion-android-home', // menu icon
+      //       selected: false,
+      //       expanded: false,
+      //       order: 50
+      //     }
+      //   },
+      //   children: [
+      //     {
+      //       path: 'register',
+      //       data: {
+      //         menu: {
+      //           title: 'Register',
+      //         }
+      //       }
+      //     },
+      //     {
+      //       path: 'list',
+      //       data: {
+      //         menu: {
+      //           title: 'List',
+      //         }
+      //       }
+      //     }
+      //
+      //   ]
+      // },
       {
-        path: 'dashboard',
-        data: {
-          menu: {
-            title: 'general.menu.dashboard',
-            icon: 'ion-android-home',
-            selected: false,
-            expanded: false,
-            order: 0
-          }
-        }
-      },
-      {
-        path: 'merchant',  // path for our page
+        path: 'slip',  // path for our page
         data: { // custom menu declaration
           menu: {
-            title: 'Merchant', // menu title
-            icon: 'ion-android-home', // menu icon
-            selected: false,
-            expanded: false,
-            order: 50
-          }
-        },
-        children: [
-          {
-            path: 'register',
-            data: {
-              menu: {
-                title: 'Register',
-              }
-            }
-          },
-          {
-            path: 'list',
-            data: {
-              menu: {
-                title: 'List',
-              }
-            }
-          }
-
-        ]
-      },
-      {
-        path: 'transaction',  // path for our page
-        data: { // custom menu declaration
-          menu: {
-            title: 'Transaction', // menu title
+            title: 'Slip', // menu title
             icon: 'ion-android-home', // menu icon
             selected: false,
             expanded: false,
@@ -68,37 +68,37 @@ export const PAGES_MENU = [
           }
 
         ]
-      },
-      {
-        path: 'report',  // path for our page
-        data: { // custom menu declaration
-          menu: {
-            title: 'Report', // menu title
-            icon: 'ion-android-home', // menu icon
-            selected: false,
-            expanded: false,
-            order: 100
-          }
-        },
-        children: [
-          {
-            path: 'agent',
-            data: {
-              menu: {
-                title: 'Agent',
-              }
-            }
-          },
-          {
-            path: 'user',
-            data: {
-              menu: {
-                title: 'User',
-              }
-            }
-          },
-        ]
-      }
+       }//,
+      // {
+      //   path: 'report',  // path for our page
+      //   data: { // custom menu declaration
+      //     menu: {
+      //       title: 'Report', // menu title
+      //       icon: 'ion-android-home', // menu icon
+      //       selected: false,
+      //       expanded: false,
+      //       order: 100
+      //     }
+      //   },
+      //   children: [
+      //     {
+      //       path: 'agent',
+      //       data: {
+      //         menu: {
+      //           title: 'Agent',
+      //         }
+      //       }
+      //     },
+      //     {
+      //       path: 'user',
+      //       data: {
+      //         menu: {
+      //           title: 'User',
+      //         }
+      //       }
+      //     },
+      //   ]
+      // }
      /* {
         path: 'editors',
         data: {
