@@ -13,7 +13,7 @@ export class AuthService {
 
 
 
-  isLoggedIn() {
+  isLoggedIn(){
 
     return this.auth;
 

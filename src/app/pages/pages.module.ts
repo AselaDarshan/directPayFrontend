@@ -7,7 +7,7 @@ import { AppTranslationModule } from '../app.translation.module';
 
 
 import { Pages } from './pages.component';
-import {AuthGuard} from "../class/AuthGuard";
+import {AuthGuard} from "../security/auth.guard";
 import {LoginService} from "./login/login.service";
 import {AuthService} from "./auth.service";
 

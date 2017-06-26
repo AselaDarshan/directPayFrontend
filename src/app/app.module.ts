@@ -23,6 +23,8 @@ import {MerchantService} from './pages/merchant/merchant.service'
 
 import { QRCodeModule } from 'angular2-qrcode';
 import {QRCodeComponent} from 'angular2-qrcode';
+import {AuthService} from "./pages/auth.service";
+import {AuthGuard} from "./security/auth.guard";
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -58,7 +60,7 @@ export type StoreType = {
     routing
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
-    APP_PROVIDERS,MerchantService,
+    APP_PROVIDERS,MerchantService,AuthGuard
   ],
 
 })

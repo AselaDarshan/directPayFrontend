@@ -1,4 +1,4 @@
-import {AuthGuard} from "../class/AuthGuard";
+import {AuthGuard} from "../security/auth.guard";
 export const PAGES_MENU = [
   {
     path: 'pages',

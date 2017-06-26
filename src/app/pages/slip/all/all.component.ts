@@ -55,6 +55,7 @@ export class AllComponent implements OnInit{
 
 
   constructor(private trasaction: SlipService,private _logger: Logger,public authService:AuthService,private router: Router) {
+    console.log(authService.isLoggedIn());
   }
   ngOnInit() {
 
@@ -167,7 +168,7 @@ export class AllComponent implements OnInit{
       else {
         if(data.errors != null){
           this.authService.authfail();
-          this.router.navigate(['/pages']);
+          this.router.navigate(['/login']);
         }
 
       }
