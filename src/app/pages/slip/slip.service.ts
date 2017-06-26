@@ -6,8 +6,8 @@ import {AppSettings} from '../../class/AppSetting'
 export class SlipService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private urlTransactionList = AppSettings.API_M+'/merchantpay/1.0.0/slip/list';
-  //private urlTransactionList = AppSettings.DIRECT_PAY_ENDPOINT+'/reports/transactions';
+  // private urlTransactionList = AppSettings.API_M+'/merchantpay/1.0.0/slip/list';
+  private urlTransactionList = AppSettings.DIRECT_PAY_ENDPOINT+'/slip/between';
   //private merchantListUrl = 'http://192.168.8.100/merchant/list';
   constructor(private http: Http) { }
   getTransactionByDateToDate(fromdate,todate,token): Promise<any> {
