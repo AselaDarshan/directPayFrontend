@@ -69,20 +69,38 @@
           <thead>
           <tr>
             <!--th style="width: 10%"></th-->
-            <th style="width: 10%">
+            <th style="width: 8%">
               <mfDefaultSorter by="tId">ID</mfDefaultSorter>
             </th>
-            <th style="width: 20%">
+            <th style="width: 8%">
               <mfDefaultSorter by="payerId">User ID</mfDefaultSorter>
             </th>
-            <th style="width: 10%">
+            <th style="width: 8%">
               <mfDefaultSorter by="payerName">Reference Number</mfDefaultSorter>
             </th>
-            <th style="width: 20%">
+            <th style="width: 8%">
+              <mfDefaultSorter by="createdAt">Created At</mfDefaultSorter>
+            </th>
+            <th style="width: 8%">
               <mfDefaultSorter by="payeeId">Amount</mfDefaultSorter>
             </th>
-            <th style="width: 10%">
+            <th style="width: 7%">
               <mfDefaultSorter by="payeeName">Account Number</mfDefaultSorter>
+            </th>
+            <th style="width: 7%">
+              <mfDefaultSorter by="type">Type</mfDefaultSorter>
+            </th>
+            <th style="width: 10%;max-width: 10%">
+              <mfDefaultSorter by="amountDescription">Amount Description</mfDefaultSorter>
+            </th>
+            <th style="width: 8%">
+              <mfDefaultSorter by="sourceOfFunds">Source Of Funds</mfDefaultSorter>
+            </th>
+            <th style="width: 7%">
+              <mfDefaultSorter by="branch">Branch</mfDefaultSorter>
+            </th>
+            <th style="width: 6%">
+              <mfDefaultSorter by="completed">Completed</mfDefaultSorter>
             </th>
 
 
@@ -103,15 +121,20 @@
             <td >{{item.id}}</td>
             <td >{{item.userId}}</td>
             <td>{{item.referenceNumber}}</td>
+            <td>{{item.createdAt}}</td>
             <td >{{item.amount |  currency:'LKR':true:'1.2-2'}} </td>
             <td>{{item.accountNumber}}</td>
-
+            <td>{{item.type}}</td>
+            <td>{{item.amountDescription}}</td>
+            <td>{{item.sourceOfFunds}}</td>
+            <td>{{item.branch}}</td>
+            <td>{{item.completed}}</td>
 
           </tr>
           </tbody>
           <tfoot>
           <tr>
-            <td colspan="5">
+            <td colspan="11">
               <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
             </td>
           </tr>
